@@ -8,7 +8,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const appConfig = require('./app/app.config');
 
 const entryPoint = resolve(__dirname, 'app') + '/index.js';
-const htmlTemplate = resolve(__dirname, 'app') + '/templates/index.html';
+const htmlTemplate = resolve(__dirname, 'app') + '/template/index.html';
 
 const config = {
   stats: {
