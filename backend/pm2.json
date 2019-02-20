@@ -1,6 +1,6 @@
 {
   "name": "goodtalk-test-backend",
-  "script": "npm run production",
+  "script": "npm start",
   "instances": "1",
   "env": {
     "NODE_ENV": "development"
