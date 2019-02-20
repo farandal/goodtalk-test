@@ -7,9 +7,20 @@ class ItemsList extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    console.log('ItemList WillMount');
+    const { dispatch } = this.props;
+    dispatch(itemsActions.getItems());
+  }
+
+  componentDidMount = () => {
+    console.log('ItemList Mounted');
+  };
+
   deleteItem = (item, event) => {
     event.preventDefault();
-    this.props.dispatch(itemsActions.deleteItem(item));
+    const { dispatch } = this.props;
+    dispatch(itemsActions.deleteItem(item));
   };
 
   render() {
@@ -21,7 +32,7 @@ class ItemsList extends React.Component {
           {items &&
             items.map((item, i) => (
               <li key={i}>
-                {item}
+                {item.id} - {item.name} - {item.description}
                 <button onClick={event => this.deleteItem(item, event)}>
                   delete
                 </button>

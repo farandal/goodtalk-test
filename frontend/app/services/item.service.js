@@ -46,6 +46,7 @@ function updateItem(item) {
 
   const requestOptions = {
     method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(parsedItem)
   };
 
@@ -71,7 +72,7 @@ function deleteItem(id) {
 
 function getItems() {
   const requestOptions = {
-    method: 'POST'
+    method: 'GET'
   };
   return fetch(`${API_URL}/items`, requestOptions)
     .then(handleResponse)
@@ -96,7 +97,6 @@ function getItem(id) {
 function handleResponse(response) {
   return response.text().then(text => {
     const data = text && JSON.parse(text);
-    data = _parseResponse(data);
 
     if (!response.ok) {
       console.log('-Response is not ok');

@@ -33,7 +33,7 @@ export const getItemsList = () => {
         return;
       }
 
-      resolve(items.map(item => item.view(false)));
+      resolve(items.map(item => item.view(true)));
     });
   });
 };
