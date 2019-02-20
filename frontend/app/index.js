@@ -6,15 +6,16 @@ import { AppContainer } from 'react-hot-loader';
 import Root from './components/Root';
 
 //REDUX
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import itemsReducer from './reducers/items.reducer';
+import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
   itemsReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const render = Component => {
   ReactDOM.render(
