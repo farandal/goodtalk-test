@@ -45,6 +45,11 @@ const config = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
+    new ExtractTextPlugin({
+      filename: './styles/style.css',
+      disable: false,
+      allChunks: true
+    }),
     new CopyWebpackPlugin([
       { from: resolve(__dirname, 'app') + '/vendors', to: 'vendors' }
     ]),

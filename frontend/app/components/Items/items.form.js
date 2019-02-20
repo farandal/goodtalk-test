@@ -26,11 +26,11 @@ class ItemsForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
         <label>
-          Item Name:
+          Sender:
           <input type='text' onChange={this.handleChange('name')} />
         </label>
         <label>
-          Item Description:
+          Message:
           <input type='text' onChange={this.handleChange('description')} />
         </label>
         <input type='submit' value='Submit' />
